@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rulers of India</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Boxicons CDN for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body style="background: url('images/hero-background.jpg') no-repeat center center/cover; height: 100vh;">
+    <div class="wrapper">
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form active">
+            <h1>Login</h1>
+            <div class="input-box">
+                <label for="login-method">Login Using</label>
+                <select id="login-method">
+                    <option value="username">Username</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone Number</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <input type="text" id="login-identifier" placeholder="Enter your Username/Email/Phone" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox" id="remember-me">Remember Me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn" onclick="handleLogin(event)">Login</button>
+            <div class="register-link">
+                <p>Don't have an account? <a href="#" onclick="toggleForm('register')">Register</a></p>
+            </div>
+            <div id="loginFeedback"></div>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="auth-form">
+            <h1>Register</h1>
+            <div class="input-box">
+                <label for="register-method">Register Using</label>
+                <select id="register-method">
+                    <option value="username">Username</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone Number</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <input type="text" id="register-identifier" placeholder="Enter your Username/Email/Phone" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <button type="submit" class="btn" onclick="handleRegister(event)">Register</button>
+            <div class="register-link">
+                <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+            </div>
+            <div id="registerFeedback"></div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
